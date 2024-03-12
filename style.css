@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.2rem;
+  
+}
+.heading{
+    text-decoration: underline;
+    font-weight: 800;
+    margin-left: 40%;
+    color: aliceblue;
+    cursor: pointer;
+    animation: fadeIn 1s ease-in-out;
+
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.container{
+    width: 500px;
+    padding: 30px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid lightsalmon;
+    animation: slideIn 1s ease-in-out;
+
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.container p{
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 8px;
+
+}
+
+.container input{
+    width: 100%;
+    height: 45px;
+    border: 1px solid black;
+    outline: 0;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border-radius: 5px;
+
+}
+
+
+.container button{
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    font-weight: 300;
+    cursor: pointer;
+    animation: fadeInButton 1s ease-in-out;
+
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#img-box{
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+    animation: slideInImageBox 1s ease-in-out;
+
+
+}
+
+@keyframes slideInImageBox {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#img-box img{
+    width: 100%;
+    padding: 10px;
+
+}
+
+#img-box.show-img{
+    max-height: 300px;
+    margin:10px auto;
+    border: 1px solid black;
+    animation: fadeInImage 1s ease-in-out;
+
+}
+
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.shake{
+    animation: shake 0.1s linear 10;
+}
+
+@keyframes shake{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-3px);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(3px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-colors-scheme: dark){
+    body{
+        background: black;
+        color: white;
+
+    }
+}
+
+
+

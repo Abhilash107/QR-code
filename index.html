@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3 class="heading">QR code generator</h3>
+
+    <div class="container">
+        <p>Enter your Text or URL</p>
+        <input type="text"  id="QR-text" placeholder="Text or URL">
+        <div id="img-box">
+            <img src="" alt="" id="QR-img">
+        </div>
+        <button class="btn">Generate</button>
+    </div>
+    
+  
+    <script>
+        let Image_box = document.getElementById("img-box");
+        let QR_Image = document.getElementById('QR-img');
+        let QR_Text = document.getElementById('QR-text');
+        let getButton = document.querySelector('.btn')
+        let getHeader  = document.querySelector('.heading');
+
+        function generateQRcode(){
+
+            if(QR_Text.value !== ""){
+                QR_Image.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + QR_Text.value;
+                Image_box.classList.add("show-img");
+   
+            }else{
+                QR_Text.classList.add('shake');
+                setTimeout( ()=> {
+                    alert("Enter a valid input");
+                    QR_Text.classList.remove('shake');
+                }, 1000)
+
+            }  
+        }
+
+        getButton.addEventListener('click',generateQRcode);
+
+        getHeader.addEventListener('click',() =>{
+            setTimeout( ()=>{
+                window.location.reload(true);
+            },
+            1000);
+        })
+
+    </script>
+</body>
+</html>
